@@ -1,4 +1,4 @@
-list1='''
+list1="""
 1. Lava Blaze 5g ---------- 10999
 2. Samsung S23 FE --------- 50999
 3. Godrej Locker ---------- 14999
@@ -9,7 +9,7 @@ list1='''
 8. Karbonn Jumbo 5g ------- 14999
 9. Celkon Karishma 5g ----- 19999
 10. Apple iphone 14 ------- 68999
-'''
+"""
 
 print(list1)
 
@@ -47,7 +47,7 @@ j=0
 
 print("---------------------Bill--------------------")
 for i in list_num:
-	print(Name_list[i],"-------",list_quantity[j],"=",list_cost[j])
+	print(f"{Name_list[i]:<29}X{list_quantity[j]:>4} = {list_cost[j]:>9}")
 	j=j+1
 
 
@@ -58,11 +58,11 @@ if count>=4 or Total_cost>=100000:
 	flag=1
 
 
-print("                           __________")
-print("Total Cost                =",Total_cost)
+print(" "*34 +"____________")
+print(f"Total Cost{' '*25}= {Total_cost:>9}")
 if flag==1:
-	print("Coupon                    =",Coupon)
+	print(f"Coupon{' '*29}= {Coupon:>9}")
 
-print("Payable Amount            =",Payable_amount)
+print(f"Payable Amount{' '*21}= {Payable_amount:>9}")
 
 
