@@ -32,6 +32,8 @@ flag=0
 
 while check>0:
 	item_num=int(input("Enter item number:"))
+	if item_num == 0:
+		break
 	item_quantity=int(input("Enter quantity:"))
 	if item_num >0:
 		count=count+item_quantity
