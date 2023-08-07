@@ -94,6 +94,7 @@ def remove_item(list_num,list_quantity,list_cost,Price_list):
 	print(list_quantity2)
 	print(list_cost2)
 	check=1
+	remove_count=0
 	while check>0:
 		item_num=int(input("Enter item number:"))
 		if item_num == 0:
@@ -103,14 +104,15 @@ def remove_item(list_num,list_quantity,list_cost,Price_list):
 			j=0
 			for i in list_num:
 				if item_num==i:
-					Res_quantity=list_quantity2[j]-item_quantity
+					Res_quantity=list_quantity2[j-remove_count]-item_quantity
 					if Res_quantity>0:
-						list_quantity2[j]=Res_quantity
-						list_cost2[j]-=(item_quantity*Price_list[(item_num-1)])
+						list_quantity2[j-remove_count]=Res_quantity
+						list_cost2[j-remove_count]-=(item_quantity*Price_list[(item_num-1)])
 					else:
-						list_quantity2.pop(j)
-						list_num2.pop(j)
-						list_cost2.pop(j)
+						list_quantity2.pop(j-remove_count)
+						list_num2.pop(j-remove_count)
+						list_cost2.pop(j-remove_count)
+						remove_count+=1
 
 				j=j+1
 	list_num[:]=list_num2.copy()
