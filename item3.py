@@ -83,10 +83,8 @@ def add_item(check,count,Total_cost,list_num,list_quantity,Price_list):
 
 
 def remove_item(list_num,count,list_quantity,Price_list,Total_cost):
-    list_num2=list_num.copy()
-    list_quantity2=list_quantity.copy()
-    print(list_num2)
-    print(list_quantity2)
+    print(list_num)
+    print(list_quantity)
     check=1
     flag=0
     while check>0:
@@ -97,19 +95,17 @@ def remove_item(list_num,count,list_quantity,Price_list,Total_cost):
         if item_num>0:
             if item_num in list_num:
                 index1 = list_num.index(item_num)
-            res_quantity=list_quantity2[index1]-item_quantity
+            res_quantity=list_quantity[index1]-item_quantity
             if res_quantity<=0:
-                list_num2.pop(index1)
-                list_quantity2.pop(index1)
+                list_num.pop(index1)
+                list_quantity.pop(index1)
             else:
-                list_quantity2[index1]=res_quantity
+                list_quantity[index1]=res_quantity
         count[0] = count[0] - item_quantity
         Total_cost[0] = Total_cost[0] - (item_quantity * Price_list[item_num - 1])
 
-    list_num[:]=list_num2.copy()
-    list_quantity[:]=list_quantity2.copy()
-    print(list_num2)
-    print(list_quantity2)
+    print(list_num)
+    print(list_quantity)
 
 
 
